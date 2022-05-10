@@ -11,7 +11,3 @@ yo.post<personalized>('/api/personalized', null, { params: { timestramp: +new Da
   const { result } = data
   console.log(result)
 })
-
-// yo.get('/get').then(r => {
-//   console.log(r)
-// })
