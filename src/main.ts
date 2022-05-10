@@ -1,10 +1,15 @@
 import yo from './yofetch'
-import axios from 'redaxios'
+// import axios from 'redaxios'
 
-axios.get<{
-  name: string
-}>('/get').then(res => {
-  console.log(res)
+interface personalized {
+  category: number;
+  code: number;
+  result: [];
+  hasTaste: boolean
+}
+yo.post<personalized>('/api/personalized', null, { params: { timestramp: +new Date().getTime() }}).then(({ data }) => {
+  const { result } = data
+  console.log(result)
 })
 
 // yo.get('/get').then(r => {
